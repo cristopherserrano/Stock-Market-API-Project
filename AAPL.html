@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="js/jquery-1.6.2.min.js" type="text/javascript"></script> 
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<title>Apple Stock</title>
+<meta charset="UTF-8">
+
+
+
+      		<p>Apple Inc.</p>
+            <p id="stockSymbol" class="ajaxtrigger">&nbsp;</p>
+            <p>2018-06-01</p>
+            <p>Open: $<span id="recOpen"></p>
+            <p>High: $<span id="recHigh"></p>
+            <p>Low: $<span id="recLow"></p>
+            <p>Close: $<span id="recClose"></p>
+            <p>Volume: $<span id="stockVolume"></p>
+            
+            <p>2018-05-31</p>
+            <p>Open: $<span id="recOpen1"></p>
+            <p>High: $<span id="recHigh1"></p>
+            <p>Low: $<span id="recLow1"></p>
+            <p>Close: $<span id="recClose1"></p>
+            <p>Volume: $<span id="stockVolume1"></p>
+            
+            <p>2018-05-30</p>
+            <p>Open: $<span id="recOpen2"></p>
+            <p>High: $<span id="recHigh2"></p>
+            <p>Low: $<span id="recLow2"></p>
+            <p>Close: $<span id="recClose2"></p>
+            <p>Volume: $<span id="stockVolume2"></p>
+            
+            <p>2018-05-29</p>
+            <p>Open: $<span id="recOpen3"></p>
+            <p>High: $<span id="recHigh3"></p>
+            <p>Low: $<span id="recLow3"></p>
+            <p>Close: $<span id="recClose3"></p>
+            <p>Volume: $<span id="stockVolume3"></p>
+          
+          	<p>2018-05-25</p>
+            <p>Open: $<span id="recOpen4"></p>
+            <p>High: $<span id="recHigh4"></p>
+            <p>Low: $<span id="recLow4"></p>
+            <p>Close: $<span id="recClose4"></p>
+            <p>Volume: $<span id="stockVolume4"></p>
+            
+            <p>2018-05-24</p>
+            <p>Open: $<span id="recOpen5"></p>
+            <p>High: $<span id="recHigh5"></p>
+            <p>Low: $<span id="recLow5"></p>
+            <p>Close: $<span id="recClose5"></p>
+            <p>Volume: $<span id="stockVolume5"></p>
+            
+            <p>2018-05-23</p>
+            <p>Open: $<span id="recOpen6"></p>
+            <p>High: $<span id="recHigh6"></p>
+            <p>Low: $<span id="recLow6"></p>
+            <p>Close: $<span id="recClose6"></p>
+            <p>Volume: $<span id="stockVolume6"></p>
+            
+            <p>2018-05-22</p>
+            <p>Open: $<span id="recOpen7"></p>
+            <p>High: $<span id="recHigh7"></p>
+            <p>Low: $<span id="recLow7"></p>
+            <p>Close: $<span id="recClose7"></p>
+            <p>Volume: $<span id="stockVolume7"></p>
+        
+      
+  
+  
+
+  <!-- End page content -->
+
+  
+  
+  
+<script>
+var theURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=Z7IN6DE27P1NX0Y5";
+
+$(document).ready(function() {
+  $("#stockIndicator").show();
+  doAjax(theURL);
+
+  $('.ajaxtrigger').click(function() {
+    $("#stockIndicator").show();
+    doAjax(theURL);
+    return false;
+  });
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+  }
+
+  function doAjax(url) {
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      contentType: "application/json",
+      success: function(data) {
+
+        var symbol = data['Meta Data']['2. Symbol']
+        var lastRefreshed = data['Meta Data']['3. Last Refreshed']
+        var lastOpen = data['Time Series (Daily)']['2018-06-01']['1. open']
+        var lastHigh = data['Time Series (Daily)']['2018-06-01']['2. high']
+        var lastLow = data['Time Series (Daily)']['2018-06-01']['3. low']
+        var lastClose = data['Time Series (Daily)']['2018-06-01']['4. close']
+        var lastVolume = data['Time Series (Daily)']['2018-06-01']['5. volume']
+        
+        var lastOpen1 = data['Time Series (Daily)']['2018-05-31']['1. open']
+        var lastHigh1 = data['Time Series (Daily)']['2018-05-31']['2. high']
+        var lastLow1 = data['Time Series (Daily)']['2018-05-31']['3. low']
+        var lastClose1 = data['Time Series (Daily)']['2018-05-31']['4. close']
+        var lastVolume1 = data['Time Series (Daily)']['2018-05-31']['5. volume']
+        
+        var lastOpen2 = data['Time Series (Daily)']['2018-05-30']['1. open']
+        var lastHigh2 = data['Time Series (Daily)']['2018-05-30']['2. high']
+        var lastLow2 = data['Time Series (Daily)']['2018-05-30']['3. low']
+        var lastClose2 = data['Time Series (Daily)']['2018-05-30']['4. close']
+        var lastVolume2 = data['Time Series (Daily)']['2018-05-30']['5. volume']
+        
+        var lastOpen3 = data['Time Series (Daily)']['2018-05-29']['1. open']
+        var lastHigh3 = data['Time Series (Daily)']['2018-05-29']['2. high']
+        var lastLow3 = data['Time Series (Daily)']['2018-05-29']['3. low']
+        var lastClose3 = data['Time Series (Daily)']['2018-05-29']['4. close']
+        var lastVolume3 = data['Time Series (Daily)']['2018-05-29']['5. volume']
+        
+        var lastOpen4 = data['Time Series (Daily)']['2018-05-25']['1. open']
+        var lastHigh4 = data['Time Series (Daily)']['2018-05-25']['2. high']
+        var lastLow4 = data['Time Series (Daily)']['2018-05-25']['3. low']
+        var lastClose4 = data['Time Series (Daily)']['2018-05-25']['4. close']
+        var lastVolume4 = data['Time Series (Daily)']['2018-05-25']['5. volume'] 
+        
+        var lastOpen4 = data['Time Series (Daily)']['2018-05-24']['1. open']
+        var lastHigh4 = data['Time Series (Daily)']['2018-05-24']['2. high']
+        var lastLow4 = data['Time Series (Daily)']['2018-05-24']['3. low']
+        var lastClose4 = data['Time Series (Daily)']['2018-05-24']['4. close']
+        var lastVolume4 = data['Time Series (Daily)']['2018-05-24']['5. volume']  
+        
+        var lastOpen5 = data['Time Series (Daily)']['2018-05-23']['1. open']
+        var lastHigh5 = data['Time Series (Daily)']['2018-05-23']['2. high']
+        var lastLow5 = data['Time Series (Daily)']['2018-05-23']['3. low']
+        var lastClose5 = data['Time Series (Daily)']['2018-05-23']['4. close']
+        var lastVolume5 = data['Time Series (Daily)']['2018-05-23']['5. volume']
+        
+        var lastOpen6 = data['Time Series (Daily)']['2018-05-22']['1. open']
+        var lastHigh6 = data['Time Series (Daily)']['2018-05-22']['2. high']
+        var lastLow6 = data['Time Series (Daily)']['2018-05-22']['3. low']
+        var lastClose6 = data['Time Series (Daily)']['2018-05-22']['4. close']
+        var lastVolume6 = data['Time Series (Daily)']['2018-05-22']['5. volume']
+        
+        var lastOpen7 = data['Time Series (Daily)']['2018-05-21']['1. open']
+        var lastHigh7 = data['Time Series (Daily)']['2018-05-21']['2. high']
+        var lastLow7 = data['Time Series (Daily)']['2018-05-21']['3. low']
+        var lastClose7 = data['Time Series (Daily)']['2018-05-21']['4. close']
+        var lastVolume7 = data['Time Series (Daily)']['2018-05-21']['5. volume']
+
+
+        $('#stockSymbol').html(symbol);
+        $('#recOpen').html(lastOpen);
+        $('#recHigh').html(lastHigh);
+        $('#recLow').html(lastLow);
+        $('#recClose').html(lastClose);
+        $('#stockVolume').html(numberWithCommas(lastVolume));
+        
+        $('#recOpen1').html(lastOpen1);
+        $('#recHigh1').html(lastHigh1);
+        $('#recLow1').html(lastLow1);
+        $('#recClose1').html(lastClose1);
+        $('#stockVolume1').html(numberWithCommas(lastVolume1));
+        
+        $('#recOpen2').html(lastOpen2);
+        $('#recHigh2').html(lastHigh2);
+        $('#recLow2').html(lastLow2);
+        $('#recClose2').html(lastClose2);
+        $('#stockVolume2').html(numberWithCommas(lastVolume2));
+        
+        $('#recOpen3').html(lastOpen3);
+        $('#recHigh3').html(lastHigh3);
+        $('#recLow3').html(lastLow3);
+        $('#recClose3').html(lastClose3);
+        $('#stockVolume3').html(numberWithCommas(lastVolume3));
+        
+        $('#recOpen4').html(lastOpen4);
+        $('#recHigh4').html(lastHigh4);
+        $('#recLow4').html(lastLow4);
+        $('#recClose4').html(lastClose4);
+        $('#stockVolume4').html(numberWithCommas(lastVolume4));
+        
+        $('#recOpen5').html(lastOpen5);
+        $('#recHigh5').html(lastHigh5);
+        $('#recLow5').html(lastLow5);
+        $('#recClose5').html(lastClose5);
+        $('#stockVolume5').html(numberWithCommas(lastVolume5));
+        
+        $('#recOpen6').html(lastOpen6);
+        $('#recHigh6').html(lastHigh6);
+        $('#recLow6').html(lastLow6);
+        $('#recClose6').html(lastClose6);
+        $('#stockVolume6').html(numberWithCommas(lastVolume6));
+        
+        $('#recOpen7').html(lastOpen7);
+        $('#recHigh7').html(lastHigh7);
+        $('#recLow7').html(lastLow7);
+        $('#recClose7').html(lastClose7);
+        $('#stockVolume7').html(numberWithCommas(lastVolume7));
+        
+     
+      }
+    });
+  }
+});
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -18,6 +18,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "HelveticaNeue", sans-serif}
 td.title:hover{
 	color: blue;
 }
+
+tr.hover{
+  color:red;
+}
 </style>
 
 <body class="w3-white">
@@ -25,9 +29,13 @@ td.title:hover{
 
 
 <!-- Top container -->
-<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <span class="w3-bar-item w3-center">Stock Market</span>
-</div>
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <div class="w3-padding-32">
+  <div class="w3-center">
+  <h1 class="w3-xxxlarge w3-animate-bottom" onclick="function10()">Stock Market API Project</h1>
+    <div class="w3-padding-28">
+  </div>
+</header>
 <!--  Top container-->
 
 
@@ -36,75 +44,84 @@ td.title:hover{
 
 
   <!-- Header -->
+
+  
+    <img src="stock.jpg" width=100% height="200" alt="Stock Market Pic">
+
+  
  
 
   <div class="w3-row-padding w3-margin-bottom" style="padding-top:60px">
-    <div class="w3-quarter">
+    <div class="w3-quarter" style="width: 20%" onclick=function11()>
       <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>52</h3>
+          <h3>MSFT</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Messages</h4>
+        <h4>Microsoft Corporation</h4>
       </div>
     </div>
     
-    <div class="w3-quarter">
-      <div class="w3-container w3-blue w3-padding-16">
-        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>99</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Views</h4>
-      </div>
-    </div>
-    
-    
-    <div class="w3-quarter">
+    <div class="w3-quarter" style="width: 20%" onclick=function12()>
       <div class="w3-container w3-teal w3-padding-16">
-        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>23</h3>
+          <h3>GOOG</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Shares</h4>
+        <h4>Alphabet Inc.</h4>
       </div>
     </div>
     
-    <div class="w3-quarter">
-      <div class="w3-container w3-orange w3-text-white w3-padding-16">
-        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+    
+    <div class="w3-quarter" style="width: 20%" onclick=function13()>
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"></div>
         <div class="w3-right">
-          <h3>50</h3>
+          <h3>AAPL</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Users</h4>
+        <h4>Apple Inc.</h4>
       </div>
     </div>
+    
+    <div class="w3-quarter" style="width: 20%" onclick=function14()>
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-right">
+          <h3>AMZN</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Amazon.com, Inc.</h4>
+      </div>
+    </div>
+
+    <div class="w3-quarter" style="width: 20%" onclick=function15()>
+      <div class="w3-container w3-purple w3-text-white w3-padding-16">
+        <div class="w3-right">
+          <h3>INTC</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Intel Corporation</h4>
+      </div>
+    </div>
+
     
   </div>
 <!--  End of top section-->
 
 
-
+<hr>
 
   <div class="w3-panel">
     <div class="w3-row-padding" style="margin:0 -16px">
-    <!--  First Half Section-->
-      <div class="w3-third">
-        <script src="http://markets.financialcontent.com/stocks?Module=snapshot&Ticker=$COMP+$SPX+GOOG+FB+MCD&Output=JS"></script>
-  		</div>
-      
-      
-      
+
+    
       
       <!--  Right half section-->
-      <div class="w3-twothird">
-        <h5 id="title">Stocks</h5>
+      <div class="w3-full">
+        <!-- #f44336 -->
+        <h4 style="text-align: center; background-color: grey;">Stocks</h4>
         <!--  Tabel Section-->
-        <table class="w3-table w3-striped w3-white">
+        <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
           <tr>
           	<td class="title" onclick=function11()>Microsoft Corporation</td>
             <td id="stockSymbol" class="ajaxtrigger">&nbsp;</td>
@@ -145,27 +162,29 @@ td.title:hover{
   
 
   <div class="w3-container">
-    <h5>General Stats</h5>
-    <p>Information Technologys</p>
-    <div class="w3-grey">
-    
-    <script>
-    var number;
-	document.write('<div class="w3-container w3-center w3-padding w3-green" style="width:'+number+'%">'+number+'% </div>');
-	</script>
-    
-      <!-- <div class="w3-container w3-center w3-padding w3-green" ng-app="MyApp">+25%</div> -->
+    <!-- #4CAF50 -->
+    <h4 style="text-align: center; background-color: grey;">Profit Margin</h4>
+    <p>Microsoft Corporation</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding w3-red" style="width:12%">11.57%</div>
+    </div>
+    <p>Alphabet Inc.</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding w3-green" style="width:14%">14.19%</div>
+    </div>
+    <p>Apple Inc.</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding w3-blue" style="width:22%">21.55%</div>
+    </div>
+    <p>Amazon.com, Inc.</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding w3-orange" style="width:2%">2.60%</div>
+    </div>
+    <p>Intel Corporation</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding w3-purple" style="width:17%">17.32%</div>
     </div>
 
-    <p>New Users</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
-    </div>
-
-    <p>Bounce Rate</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
-    </div>
   </div>
   
   
@@ -174,8 +193,8 @@ td.title:hover{
   <!--  Country Performance-->
 
   <div class="w3-container">
-    <h5>US Sector Performance (realtime & historical)</h5>
-    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+    <h4 style="text-align: center; background-color: grey;">US Sector Performance (realtime & historical)</h4>
+    <table class="w3-table w3-striped w3-white">
       <tr>
         <td>Information Technology</td>
         <td id="sec1" class="ajaxtriggerSec"></td>
@@ -234,25 +253,24 @@ td.title:hover{
   <div class="w3-container w3-dark-grey w3-padding-32">
     <div class="w3-row">
       <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-green">Demographic</h5>
-        <p>Language</p>
-        <p>Country</p>
-        <p>City</p>
+        <h5 class="w3-bottombar w3-border-green">Technologies Used</h5>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript: JQuery, AJAX</p>
       </div>
       
       <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-red">System</h5>
-        <p>Browser</p>
-        <p>OS</p>
-        <p>More</p>
+        <h5 class="w3-bottombar w3-border-red">Citing</h5>
+        <p>CSS assistence: w3.css</p>
+        <p>Stock API: Alpha Vantage Inc.</p>
       </div>
       
       <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-orange">Target</h5>
-        <p>Users</p>
-        <p>Active</p>
-        <p>Geo</p>
-        <p>Interests</p>
+        <h5 class="w3-bottombar w3-border-orange">Designer</h5>
+        <p>Cristopher Serrano</p>
+        <p>GitHub: https://github.com/cristopherserrano</p>
+        <p>Phone: (703)786-4525</p>
+        <p>Email: cas5tu@virginia.edu</p>
       </div>
     </div>
   </div>
@@ -509,6 +527,9 @@ $(document).ready(function() {
 	  }
 	});
 	
+  function function10(){
+    window.location = "homepage.html";
+}
 	function function11(){
 		window.location = "MSFT.html";
 	}

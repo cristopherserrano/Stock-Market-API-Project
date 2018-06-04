@@ -3,74 +3,315 @@
 <script src="js/jquery-1.6.2.min.js" type="text/javascript"></script> 
 <script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Amazon Stock</title>
 <meta charset="UTF-8">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "HelveticaNeue", sans-serif}
+/*  other font to try: Raleway*/
+
+h2.title{
+    color: white;
+}
+
+</style>
+
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <div class="w3-padding-32">
+  <div class="w3-center">
+  <h1 class="w3-xxxlarge w3-animate-bottom" onclick="function10()">Stock Market API Project</h1>
+    <div class="w3-padding-28">
+  </div>
+</header>
+
+<!-- Header -->
+ 
+<img src="stock.jpg" width=100% height="200" alt="Stock Market Pic">
+  <div class="w3-row-padding w3-margin-bottom" style="padding-top:60px">
+    <div class="w3-quarter" style="width: 20%" onclick=function11()>
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-right">
+          <h3>MSFT</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Microsoft Corporation</h4>
+      </div>
+    </div>
+    
+    <div class="w3-quarter" style="width: 20%" onclick=function12()>
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-right">
+          <h3>GOOG</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Alphabet Inc.</h4>
+      </div>
+    </div>
+    
+    
+    <div class="w3-quarter" style="width: 20%" onclick=function13()>
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"></div>
+        <div class="w3-right">
+          <h3>AAPL</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Apple Inc.</h4>
+      </div>
+    </div>
+    
+    <div class="w3-quarter" style="width: 20%" onclick=function14()>
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-right">
+          <h3>AMZN</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Amazon.com, Inc.</h4>
+      </div>
+    </div>
+
+    <div class="w3-quarter" style="width: 20%" onclick=function15()>
+      <div class="w3-container w3-purple w3-text-white w3-padding-16">
+        <div class="w3-right">
+          <h3>INTC</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Intel Corporation</h4>
+      </div>
+    </div>
+
+    
+  </div>
 
 
 
-      		<p>Amazon.com, Inc.</p>
-            <p id="stockSymbol" class="ajaxtrigger">&nbsp;</p>
-            <p>2018-06-01</p>
-            <p>Open: $<span id="recOpen"></p>
-            <p>High: $<span id="recHigh"></p>
-            <p>Low: $<span id="recLow"></p>
-            <p>Close: $<span id="recClose"></p>
-            <p>Volume: $<span id="stockVolume"></p>
+      		<h2 style="text-align: center; background-color: #ff9800;" class="title">Amazon.com, Inc.</h2>
+             <hr>
+            <h4 style="text-align: center; background-color: #EADEDB;">2018-06-01</h4>
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                <tr>
+                    <td>Open:</td> 
+                    <td id="recOpen"></td>
+                </tr>
+                <tr>
+                    <td>High:</td>
+                    <td id="recHigh"></td>
+                </tr>
+                <tr>
+                    <td>Low:</td>
+                    <td id="recLow"></td>
+                </tr>
+                <tr>
+                    <td>Close:</td>
+                    <td id="recClose"></td>
+                </tr>
+                <tr>
+                    <td>Volume:</td>
+                    <td id="stockVolume"></td>
+                </tr>
+            </table>
             
-            <p>2018-05-31</p>
-            <p>Open: $<span id="recOpen1"></p>
-            <p>High: $<span id="recHigh1"></p>
-            <p>Low: $<span id="recLow1"></p>
-            <p>Close: $<span id="recClose1"></p>
-            <p>Volume: $<span id="stockVolume1"></p>
+            <h4 style="text-align: center; background-color: #EADEDB;">2018-05-31</h4>
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                <tr>
+                    <td>Open:</td> 
+                    <td id="recOpen1"></td>
+                </tr>
+                <tr>
+                    <td>High:</td>
+                    <td id="recHigh1"></td>
+                </tr>
+                <tr>
+                    <td>Low:</td>
+                    <td id="recLow1"></td>
+                </tr>
+                <tr>
+                    <td>Close:</td>
+                    <td id="recClose1"></td>
+                </tr>
+                <tr>
+                    <td>Volume:</td>
+                    <td id="stockVolume1"></td>
+                </tr>
+            </table>
             
-            <p>2018-05-30</p>
-            <p>Open: $<span id="recOpen2"></p>
-            <p>High: $<span id="recHigh2"></p>
-            <p>Low: $<span id="recLow2"></p>
-            <p>Close: $<span id="recClose2"></p>
-            <p>Volume: $<span id="stockVolume2"></p>
+            <h4 style="text-align: center; background-color: #EADEDB;">2018-05-30</h4>
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+                    <td>Open:</td> 
+                    <td id="recOpen2"></td>
+                </tr>
+                <tr>
+                    <td>High:</td>
+                    <td id="recHigh2"></td>
+                </tr>
+                <tr>
+                    <td>Low:</td>
+                    <td id="recLow2"></td>
+                </tr>
+                <tr>
+                    <td>Close:</td>
+                    <td id="recClose2"></td>
+                </tr>
+                <tr>
+                    <td>Volume:</td>
+                    <td id="stockVolume2"></td>
+                </tr>
+            </table>
             
-            <p>2018-05-29</p>
-            <p>Open: $<span id="recOpen3"></p>
-            <p>High: $<span id="recHigh3"></p>
-            <p>Low: $<span id="recLow3"></p>
-            <p>Close: $<span id="recClose3"></p>
-            <p>Volume: $<span id="stockVolume3"></p>
+            <h4 style="text-align: center; background-color: #EADEDB;">2018-05-29</h4>
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+                    <td>Open:</td> 
+                    <td id="recOpen3"></td>
+                </tr>
+                <tr>
+                    <td>High:</td>
+                    <td id="recHigh3"></td>
+                </tr>
+                <tr>
+                    <td>Low:</td>
+                    <td id="recLow3"></td>
+                </tr>
+                <tr>
+                    <td>Close:</td>
+                    <td id="recClose3"></td>
+                </tr>
+                <tr>
+                    <td>Volume:</td>
+                    <td id="stockVolume3"></td>
+                </tr>
+            </table>
           
-          	<p>2018-05-25</p>
-            <p>Open: $<span id="recOpen4"></p>
-            <p>High: $<span id="recHigh4"></p>
-            <p>Low: $<span id="recLow4"></p>
-            <p>Close: $<span id="recClose4"></p>
-            <p>Volume: $<span id="stockVolume4"></p>
+            <h4 style="text-align: center; background-color: #EADEDB;">2018-05-25</h4>
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+                    <td>Open:</td> 
+                    <td id="recOpen4"></td>
+                </tr>
+                <tr>
+                    <td>High:</td>
+                    <td id="recHigh4"></td>
+                </tr>
+                <tr>
+                    <td>Low:</td>
+                    <td id="recLow4"></td>
+                </tr>
+                <tr>
+                    <td>Close:</td>
+                    <td id="recClose4"></td>
+                </tr>
+                <tr>
+                    <td>Volume:</td>
+                    <td id="stockVolume4"></td>
+                </tr>
+            </table>
             
-            <p>2018-05-24</p>
-            <p>Open: $<span id="recOpen5"></p>
-            <p>High: $<span id="recHigh5"></p>
-            <p>Low: $<span id="recLow5"></p>
-            <p>Close: $<span id="recClose5"></p>
-            <p>Volume: $<span id="stockVolume5"></p>
+            <h4 style="text-align: center; background-color: #EADEDB;">2018-05-24</h4>
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+                    <td>Open:</td> 
+                    <td id="recOpen5"></td>
+                </tr>
+                <tr>
+                    <td>High:</td>
+                    <td id="recHigh5"></td>
+                </tr>
+                <tr>
+                    <td>Low:</td>
+                    <td id="recLow5"></td>
+                </tr>
+                <tr>
+                    <td>Close:</td>
+                    <td id="recClose5"></td>
+                </tr>
+                <tr>
+                    <td>Volume:</td>
+                    <td id="stockVolume5"></td>
+                </tr>
+            </table>
             
-            <p>2018-05-23</p>
-            <p>Open: $<span id="recOpen6"></p>
-            <p>High: $<span id="recHigh6"></p>
-            <p>Low: $<span id="recLow6"></p>
-            <p>Close: $<span id="recClose6"></p>
-            <p>Volume: $<span id="stockVolume6"></p>
+            <h4 style="text-align: center; background-color: #EADEDB;">2018-05-23</h4>
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+                    <td>Open:</td> 
+                    <td id="recOpen6"></td>
+                </tr>
+                <tr>
+                    <td>High:</td>
+                    <td id="recHigh6"></td>
+                </tr>
+                <tr>
+                    <td>Low:</td>
+                    <td id="recLow6"></td>
+                </tr>
+                <tr>
+                    <td>Close:</td>
+                    <td id="recClose6"></td>
+                </tr>
+                <tr>
+                    <td>Volume:</td>
+                    <td id="stockVolume6"></td>
+                </tr>
+            </table>
             
-            <p>2018-05-22</p>
-            <p>Open: $<span id="recOpen7"></p>
-            <p>High: $<span id="recHigh7"></p>
-            <p>Low: $<span id="recLow7"></p>
-            <p>Close: $<span id="recClose7"></p>
-            <p>Volume: $<span id="stockVolume7"></p>
+            <h4 style="text-align: center; background-color: #EADEDB;">2018-05-22</h4>
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+                    <td>Open:</td> 
+                    <td id="recOpen7"></td>
+                </tr>
+                <tr>
+                    <td>High:</td>
+                    <td id="recHigh7"></td>
+                </tr>
+                <tr>
+                    <td>Low:</td>
+                    <td id="recLow7"></td>
+                </tr>
+                <tr>
+                    <td>Close:</td>
+                    <td id="recClose7"></td>
+                </tr>
+                <tr>
+                    <td>Volume:</td>
+                    <td id="stockVolume7"></td>
+                </tr>
+            </table>
         
       
   
   
-
+<br>
+  
+  
+  
+  <div class="w3-container w3-dark-grey w3-padding-32">
+    <div class="w3-row">
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-green">Technologies Used</h5>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript: JQuery, AJAX</p>
+      </div>
+      
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-red">Citing</h5>
+        <p>CSS assistence: w3.css</p>
+        <p>Stock API: Alpha Vantage Inc.</p>
+      </div>
+      
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-orange">Designer</h5>
+        <p>Cristopher Serrano</p>
+        <p>GitHub: https://github.com/cristopherserrano</p>
+        <p>Phone: (703)786-4525</p>
+        <p>Email: cas5tu@virginia.edu</p>
+      </div>
+    </div>
+  </div>
   <!-- End page content -->
 
   
@@ -213,7 +454,24 @@ $(document).ready(function() {
 });
 
 
-
+function function10(){
+    window.location = "homepage.html";
+}
+function function11(){
+        window.location = "MSFT.html";
+    }
+    function function12(){
+        window.location = "GOOG.html";
+    }
+    function function13(){
+        window.location = "AAPL.html";
+    }
+    function function14(){
+        window.location = "AMZN.html";
+    }
+    function function15(){
+        window.location = "INTC.html";
+    }
 
 
 

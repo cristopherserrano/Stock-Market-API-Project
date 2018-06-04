@@ -1,0 +1,2 @@
+# Stock-Market-API-Project
+Using the Javascript framework and stock market API of your choice, design and build a project that displays the prices of five different stocks over the past week. The homepage should give an oversight of all the stocks, and there should be five pages linked that give greater insight into the performance of each individual stock. The app’s functionality and aesthetic will be assessed equally.

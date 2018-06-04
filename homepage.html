@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="js/jquery-1.6.2.min.js" type="text/javascript"></script> 
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<title>Stock Market API Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "HelveticaNeue", sans-serif}
+/*  other font to try: Raleway*/
+
+td.title:hover{
+	color: blue;
+}
+</style>
+
+<body class="w3-white">
+
+
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <span class="w3-bar-item w3-center">Stock Market</span>
+</div>
+<!--  Top container-->
+
+
+
+
+
+
+  <!-- Header -->
+ 
+
+  <div class="w3-row-padding w3-margin-bottom" style="padding-top:60px">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>52</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Messages</h4>
+      </div>
+    </div>
+    
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>99</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Views</h4>
+      </div>
+    </div>
+    
+    
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>23</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Shares</h4>
+      </div>
+    </div>
+    
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>50</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Users</h4>
+      </div>
+    </div>
+    
+  </div>
+<!--  End of top section-->
+
+
+
+
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+    <!--  First Half Section-->
+      <div class="w3-third">
+        <script src="http://markets.financialcontent.com/stocks?Module=snapshot&Ticker=$COMP+$SPX+GOOG+FB+MCD&Output=JS"></script>
+  		</div>
+      
+      
+      
+      
+      <!--  Right half section-->
+      <div class="w3-twothird">
+        <h5 id="title">Stocks</h5>
+        <!--  Tabel Section-->
+        <table class="w3-table w3-striped w3-white">
+          <tr>
+          	<td class="title" onclick=function11()>Microsoft Corporation</td>
+            <td id="stockSymbol" class="ajaxtrigger">&nbsp;</td>
+            <td>Price: $<span id="stockAsk"></span></td>
+          </tr>
+          <tr>
+          	<td class="title" onclick=function12()>Alphabet Inc.</td>
+            <td id="stockSymbol2" class="ajaxtrigger2">&nbsp;</td>
+            <td>Price: $<span id="stockAsk2"></span></td>
+          </tr>
+          <tr>
+          	<td class="title" onclick=function13()>Apple Inc.</td>
+            <td id="stockSymbol3" class="ajaxtrigger3">&nbsp;</td>
+            <td>Price: $<span id="stockAsk3"></span></td>
+          </tr>
+          <tr>
+          	<td class="title" onclick=function14()>Amazon.com, Inc.</td>
+			<td id="stockSymbol4" class="ajaxtrigger4">&nbsp;</td>
+            <td>Price: $<span id="stockAsk4"></span></td>
+          </tr>
+          <tr>
+          	<td class="title" onclick=function15()>Intel Corporation</td>
+            <td id="stockSymbol5" class="ajaxtrigger5">&nbsp;</td>
+            <td>Price: $<span id="stockAsk5"></span></td>
+          </tr>
+          
+        </table>
+        
+      </div>
+    </div>
+  </div>
+  
+  <!--  End of Second Section-->
+  <hr>
+  
+  
+  <!--  Sector Performance Data-->
+  
+
+  <div class="w3-container">
+    <h5>General Stats</h5>
+    <p>Information Technologys</p>
+    <div class="w3-grey">
+    
+    <script>
+    var number;
+	document.write('<div class="w3-container w3-center w3-padding w3-green" style="width:'+number+'%">'+number+'% </div>');
+	</script>
+    
+      <!-- <div class="w3-container w3-center w3-padding w3-green" ng-app="MyApp">+25%</div> -->
+    </div>
+
+    <p>New Users</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
+    </div>
+
+    <p>Bounce Rate</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
+    </div>
+  </div>
+  
+  
+  <!--  End of Sector Performance-->
+  <hr>
+  <!--  Country Performance-->
+
+  <div class="w3-container">
+    <h5>US Sector Performance (realtime & historical)</h5>
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+      <tr>
+        <td>Information Technology</td>
+        <td id="sec1" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Materials</td>
+        <td id="sec2" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Health Care</td>
+        <td id="sec3" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Industrials</td>
+        <td id="sec4" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Financials</td>
+        <td id="sec5" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Consumer Discretionary</td>
+        <td id="sec6" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Energy</td>
+        <td id="sec7" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Real Estate</td>
+        <td id="sec8" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Telecommunication Service</td>
+        <td id="sec9" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Consumer Staples</td>
+        <td id="sec10" class="ajaxtriggerSec"></td>
+      </tr>
+      <tr>
+        <td>Utilities</td>
+        <td id="sec11" class="ajaxtriggerSec"></td>
+      </tr>
+    </table><br>
+  </div>
+  
+  
+  <!--  End of Country Performance-->
+  
+  <!--  End of Country Performance-->
+  <br>
+  
+  
+  
+  <div class="w3-container w3-dark-grey w3-padding-32">
+    <div class="w3-row">
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-green">Demographic</h5>
+        <p>Language</p>
+        <p>Country</p>
+        <p>City</p>
+      </div>
+      
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-red">System</h5>
+        <p>Browser</p>
+        <p>OS</p>
+        <p>More</p>
+      </div>
+      
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-orange">Target</h5>
+        <p>Users</p>
+        <p>Active</p>
+        <p>Geo</p>
+        <p>Interests</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- End page content -->
+
+  
+  
+  
+<script>
+var theURL = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey=Z7IN6DE27P1NX0Y5";
+
+$(document).ready(function() {
+  $("#stockIndicator").show();
+  doAjax(theURL);
+
+  $('.ajaxtrigger').click(function() {
+    $("#stockIndicator").show();
+    doAjax(theURL);
+    return false;
+  });
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+  }
+
+  function doAjax(url) {
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      contentType: "application/json",
+      success: function(data) {
+
+        var symbol = data['Meta Data']['2. Symbol']
+        var lastRefreshed = data['Meta Data']['3. Last Refreshed']
+        var lastTradePriceOnly = data['Time Series (1min)'][lastRefreshed]['4. close']
+        var lastVolume = data['Time Series (1min)'][lastRefreshed]['5. volume']
+
+        $('#stockSymbol').html(symbol);
+        $('#stockAsk').html(lastTradePriceOnly);
+        $('#stockVolume').html(numberWithCommas(lastVolume));
+        $("#stockIndicator").hide();
+      }
+    });
+  }
+});
+
+var URL = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=GOOG&interval=1min&apikey=Z7IN6DE27P1NX0Y5";
+
+$(document).ready(function() {
+  $("#stockIndicator2").show();
+  doAjax(URL);
+
+  $('.ajaxtrigger2').click(function() {
+    $("#stockIndicator2").show();
+    doAjax(URL);
+    return false;
+  });
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+  }
+
+  function doAjax(url) {
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      contentType: "application/json",
+      success: function(data) {
+
+        var symbol = data['Meta Data']['2. Symbol']
+        var lastRefreshed = data['Meta Data']['3. Last Refreshed']
+        var lastTradePriceOnly = data['Time Series (1min)'][lastRefreshed]['4. close']
+        
+
+        $('#stockSymbol2').html(symbol);
+        $('#stockAsk2').html(lastTradePriceOnly);
+        
+        
+      }
+    });
+  }
+});
+
+var URL2 = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=Z7IN6DE27P1NX0Y5";
+
+$(document).ready(function() {
+  $("#stockIndicator3").show();
+  doAjax(URL2);
+
+  $('.ajaxtrigger3').click(function() {
+    $("#stockIndicator3").show();
+    doAjax(URL2);
+    return false;
+  });
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+  }
+
+  function doAjax(url) {
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      contentType: "application/json",
+      success: function(data) {
+
+        var symbol = data['Meta Data']['2. Symbol']
+        var lastRefreshed = data['Meta Data']['3. Last Refreshed']
+        var lastTradePriceOnly = data['Time Series (1min)'][lastRefreshed]['4. close']
+        
+
+        $('#stockSymbol3').html(symbol);
+        $('#stockAsk3').html(lastTradePriceOnly);
+        
+        
+      }
+    });
+  }
+});
+
+var URL4 = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AMZN&interval=1min&apikey=Z7IN6DE27P1NX0Y5";
+
+$(document).ready(function() {
+  $("#stockIndicator4").show();
+  doAjax(URL4);
+
+  $('.ajaxtrigger4').click(function() {
+    $("#stockIndicator4").show();
+    doAjax(URL4);
+    return false;
+  });
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+  }
+
+  function doAjax(url) {
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      contentType: "application/json",
+      success: function(data) {
+
+        var symbol = data['Meta Data']['2. Symbol']
+        var lastRefreshed = data['Meta Data']['3. Last Refreshed']
+        var lastTradePriceOnly = data['Time Series (1min)'][lastRefreshed]['4. close']
+        
+
+        $('#stockSymbol4').html(symbol);
+        $('#stockAsk4').html(lastTradePriceOnly);
+        
+        
+      }
+    });
+  }
+});
+
+var URL5 = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=INTC&interval=1min&apikey=Z7IN6DE27P1NX0Y5";
+
+$(document).ready(function() {
+  $("#stockIndicator5").show();
+  doAjax(URL5);
+
+  $('.ajaxtrigger5').click(function() {
+    $("#stockIndicator5").show();
+    doAjax(URL5);
+    return false;
+  });
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+  }
+
+  function doAjax(url) {
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      contentType: "application/json",
+      success: function(data) {
+
+        var symbol = data['Meta Data']['2. Symbol']
+        var lastRefreshed = data['Meta Data']['3. Last Refreshed']
+        var lastTradePriceOnly = data['Time Series (1min)'][lastRefreshed]['4. close']
+        
+
+        $('#stockSymbol5').html(symbol);
+        $('#stockAsk5').html(lastTradePriceOnly);
+        
+        
+      }
+    });
+  }
+});
+
+var URLSec ="https://www.alphavantage.co/query?function=SECTOR&apikey=Z7IN6DE27P1NX0Y5";
+$(document).ready(function() {
+	  $("#stockIndicatorSec").show();
+	  doAjax(URLSec);
+
+	  $('.ajaxtriggerSec').click(function() {
+	    $("#sec1").show();
+	    $("#sec2").show();
+	    $("#sec3").show();
+	    $("#sec4").show();
+	    $("#sec5").show();
+	    $("#sec6").show();
+	    $("#sec7").show();
+	    $("#sec8").show();
+	    $("#sec9").show();
+	    $("#sec10").show();
+	    $("#sec11").show();
+	    doAjax(URLSec);
+	    return false;
+	  });
+	  
+	  
+	  function doAjax(url) {
+	    $.ajax({
+	      url: url,
+	      dataType: 'json',
+	      contentType: "application/json",
+	      success: function(data) {
+
+	        var symbol = data['Meta Data']['Information']
+	        var vsec1 = data['Rank A: Real-Time Performance']['Information Technology']
+	        var vsec2 = data['Rank A: Real-Time Performance']['Materials']
+	        var vsec3 = data['Rank A: Real-Time Performance']['Health Care']
+	        var vsec4 = data['Rank A: Real-Time Performance']['Industrials']
+	        var vsec5 = data['Rank A: Real-Time Performance']['Financials']
+	        var vsec6 = data['Rank A: Real-Time Performance']['Consumer Discretionary']
+	        var vsec7 = data['Rank A: Real-Time Performance']['Energy']
+	        var vsec8 = data['Rank A: Real-Time Performance']['Real Estate']
+	        var vsec9 = data['Rank A: Real-Time Performance']['Telecommunication Services']
+	        var vsec10 = data['Rank A: Real-Time Performance']['Consumer Staples']
+	        var vsec11 = data['Rank A: Real-Time Performance']['Utilities']
+	        
+	     
+	        $('#sec1').html(vsec1);
+	        $('#sec2').html(vsec2);
+	        $('#sec3').html(vsec3);
+	        $('#sec4').html(vsec4);
+	        $('#sec5').html(vsec5);
+	        $('#sec6').html(vsec6);
+	        $('#sec7').html(vsec7);
+	        $('#sec8').html(vsec8);
+	        $('#sec9').html(vsec9);
+	        $('#sec10').html(vsec10);
+	        $('#sec11').html(vsec11);
+
+	        
+	      }
+	    });
+	  }
+	});
+	
+	function function11(){
+		window.location = "MSFT.html";
+	}
+	function function12(){
+		window.location = "GOOG.html";
+	}
+	function function13(){
+		window.location = "AAPL.html";
+	}
+	function function14(){
+		window.location = "AMZN.html";
+	}
+	function function15(){
+		window.location = "INTC.html";
+	}
+
+
+</script>
+
+</body>
+</html>
